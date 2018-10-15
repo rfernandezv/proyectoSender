@@ -51,10 +51,7 @@ public class CustomerController {
 	public ResponseEntity<Object> signIn(@RequestBody CustomerCreateDto customerCreateDto) throws Exception {
             boolean status = false;
             try {
-                //rfv
-                sender.getSendMessage("fuck sent");
-                //
-                
+               
                 status = unitOfWork.beginTransaction();                
                 Customer customer = customerCreateAssembler.toEntity(customerCreateDto);
                 customerRepository.create(customer);
